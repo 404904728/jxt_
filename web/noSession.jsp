@@ -8,7 +8,7 @@
 </head>
 <body>
 <script type="text/javascript">
-window.open("home.htm?logon_","_self");  aaa
+window.open("home.htm?logon_","_self");
 </script>
 </body>
 </html>
