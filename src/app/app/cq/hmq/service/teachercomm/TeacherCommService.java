@@ -58,59 +58,35 @@ public class TeacherCommService extends BaseService{
 		+"children:{'11' : {id : 8,name: '灏忓閮�, type: 'item'},'12' : {id : 12,name: '鍒濅腑閮�', type: 'item'},'13' : {id : 13,name: '楂樹腑閮�, type: 'item'}}}}}"
 	 
 	 */
-	public Map<String, Object> obtailOrgDataForCommForAce(){
+	public List obtailOrgDataForCommForAce(Long id){
 		 Map<String, Object> map = null;
 		 Map<String, Object> childmap = null;
-		 Map<String, Object> children = null;
-		 Map<String, Object> allNameMap = null;
-		 Map<String, Object> subchildmap = null;
-		 //String[][] names = {{"教务处","学生处","所有教师"},{"r","r","o"},{"1041","1044","-1"},{"1042","1045","-1"},{"1043","1046","-1"}};
-		 Org org = (Org) dao.findOne("from Org where parent is null and id = ?", 2L);
-		 if(null != org){
-			 map = new HashMap<String, Object>();
-			 map.put("id", org.getId());
-			 map.put("name", org.getName());
-			 map.put("type", "folder");
-			 List<Org> list =  findOrgByPid(org.getId(),4);
-			 if(null != list && list.size() > 0){
-				 childmap = new HashMap<String, Object>();
-				 children = new HashMap<String, Object>();
-				 for(Org o : list){
-					 Map<String, Object> newmap = new HashMap<String, Object>();
-					 newmap.put("id", o.getId());
-					 newmap.put("name", o.getName());
-					 newmap.put("type", "item");
-					 if(!StringUtil.isEmpty(o.getTel())){
-						 newmap.put("phone", o.getTel());
-					 }
-					/* allNameMap = new HashMap<String, Object>();
-					 subchildmap = new HashMap<String, Object>();
-					 for(int i =0; i < 3; i ++){
-						 Map<String, Object> nameMap = new HashMap<String, Object>();
-						 nameMap.put("id", i);
-						 nameMap.put("name", names[0][i]);
-						 nameMap.put("itemtype", names[1][i]);
-						 if(o.getId().equals(3L)){
-							 nameMap.put("roleid", names[2][i]);
-						 }else if(o.getId().equals(4L)){
-							 nameMap.put("roleid", names[3][i]);
-						 }else if(o.getId().equals(5L)){
-							 nameMap.put("roleid", names[4][i]);
+		 List result = new ArrayList<>();;
+		 if(null == id || id < 1){
+			 Org org = (Org) dao.findOne("from Org where parent is null and id = ?", 2L);
+			 if(null != org){
+				 map = new HashMap<String, Object>();
+				 map.put("id", org.getId());
+				 map.put("name", org.getName());
+				 map.put("type", "folder");
+				 result.add(map);
+			}
+		 }else{
+				 List<Org> list =  findOrgByPid(id,4);
+				 if(null != list && list.size() > 0){
+					 for(Org o : list){
+						 childmap = new HashMap<String, Object>();
+						 childmap.put("id", o.getId());
+						 childmap.put("name", o.getName());
+						 childmap.put("type", "item");
+						 if(!StringUtil.isEmpty(o.getTel())){
+							 childmap.put("phone", o.getTel());
 						 }
-						 nameMap.put("orgtypeid", o.getId());
-						 nameMap.put("type", "item");
-						 allNameMap.put(String.valueOf(i), nameMap);
+						 result.add(childmap);
 					 }
-					 subchildmap.put("children", allNameMap);
-					 newmap.put("additionalParameters", subchildmap);*/
-
-					 childmap.put(o.getId().toString(), newmap);
 				 }
-				 children.put("children", childmap);
-				 map.put("additionalParameters", children);
-			 }
 		 }
-		 return map;
+		 return result;
 		}
 	
 	/**

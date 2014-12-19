@@ -1,4 +1,4 @@
-package core.cq.hmq.controller.process;
+/*package core.cq.hmq.controller.process;
 
 import java.util.List;
 import java.util.Map;
@@ -14,21 +14,21 @@ import core.cq.hmq.controller.core.BaseController;
 import core.cq.hmq.service.process.ProcessService;
 
 
-/**
+*//**
  * 部署工作流
  * 
  * @author Administrator
  * 
- */
+ *//*
 @Controller
 @RequestMapping("/process")
 public class ProcessController extends BaseController {
 
-	/**
+	*//**
 	 * 页面跳转
 	 * 
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(params = "page_")
 	public String page() {
 		return "core/workflow/processManage";
@@ -37,11 +37,11 @@ public class ProcessController extends BaseController {
 	@Resource
 	private ProcessService processService;
 
-	/**
+	*//**
 	 * 获取部署的工作流
 	 * 
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(params = "findDeploy")
 	@ResponseBody
 	public List<Map<String, String>> findDeploy() {
@@ -49,9 +49,9 @@ public class ProcessController extends BaseController {
 		// return processService.findProcess();
 	}
 
-	/**
+	*//**
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(params = "deploy")
 	@ResponseBody
 	public String deploy(String proId) {
@@ -62,11 +62,11 @@ public class ProcessController extends BaseController {
 		return "部署失败";
 	}
 
-	/**
+	*//**
 	 * 挂起工作流
 	 * 
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(params = "stop_")
 	@ResponseBody
 	public String stop(String proId) {
@@ -82,11 +82,11 @@ public class ProcessController extends BaseController {
 		return b;
 	}
 
-	/**
+	*//**
 	 * 激活工作流
 	 * 
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(params = "activation_")
 	@ResponseBody
 	public String activation(String proId) {
@@ -101,11 +101,11 @@ public class ProcessController extends BaseController {
 		return b;
 	}
 
-	/**
+	*//**
 	 * 启动流程
 	 * 
 	 * @return
-	 */
+	 *//*
 	@RequestMapping(params = "start", method = RequestMethod.POST)
 	@ResponseBody
 	public String start() {
@@ -116,3 +116,4 @@ public class ProcessController extends BaseController {
 		return "启动失败";
 	}
 }
+*/

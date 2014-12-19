@@ -398,4 +398,40 @@ public class RoleService extends BaseService {
 
     }
 
+	public List<Map<String, Object>> findTeacherRoleForACETree(Long id) {
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        if (null == id || id < 1) {
+            List<Role> roles = dao.find(Role.class, "type", 1);
+            for (Role role : roles) {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("id",  role.getId());
+                map.put("name", role.getName());
+                map.put("type", "folder");
+                map.put("icon-class", "green");
+                list.add(map);
+            }
+            return list;
+        } else {
+            List<Object[]> listObj = dao
+                    .getHelperDao()
+                    .find("select t.id_f,t.name_f,gender_f from teacherInfo_t t where t.id_f in(select r.userId_f from userrole_t r where r.roleId_f=? and teacher_f=1)",
+                            id);
+            for (Object[] object : listObj) {
+                Map<String, Object> map = new HashMap<String, Object>();
+                map.put("id", object[0]);
+                map.put("type", "item");
+                if (null == object[2] || object[2].toString().equals("2")) {
+                	map.put("name", "<i class='ace_icon fa fa-meh-o blue'></i>"+ object[1]);
+                } else if (object[2].toString().equals("1")) {
+                    map.put("name", "<i class='ace_icon fa fa-male blue'></i>"+ object[1]);
+                } else {
+                	map.put("name", "<i class='ace_icon fa fa-female pink'></i>"+ object[1]);
+                }
+                // map.put("children", "[]");
+                list.add(map);
+            }
+            return list;
+        }
+	}
+
 }

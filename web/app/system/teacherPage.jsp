@@ -4,6 +4,8 @@
 <script type="text/javascript" src="./res/script_/zTree/js/jquery.ztree.core-3.5.js"></script>
 <script type="text/javascript" src="./res/script_/zTree/js/jquery.ztree.excheck-3.5.js"></script>
 <script type="text/javascript" src="./res/script_/zTree/js/jquery.ztree.exedit-3.5.js"></script>
+<script src="./res/ace/assets/js/fuelux/data/fuelux.tree-sample-demo-data.js"></script>
+<script src="./res/ace/assets/js/fuelux/fuelux.tree.min.js"></script>
 <style type="text/css">
 .ztree li span.demoIcon{padding:0 2px 0 10px;}
 .ztree li span.button.icon{margin:0; background: url(./res/script_/zTree/css/zTreeStyle/img/diy/del.png) no-repeat scroll 0 0 transparent; vertical-align:top; *vertical-align:middle}
@@ -13,9 +15,9 @@
 		<div class="clearfix">
 			<div class="pull-left alert alert-success no-margin">
 				<button type="button" class="close" data-dismiss="alert">
-					<i class="icon-remove"></i>
+					<i class="ace-icon fa fa-times"></i>
 				</button>
-				<i class="icon-umbrella bigger-120 blue"></i>
+				<i class="fa fa-umbrella bigger-120 blue"></i>
 				点击下面的树可以查看班级的信息,学校教职工的信息...
 			</div>
 		</div>
@@ -25,14 +27,14 @@
 	<div class="col-xs-12">
 		<div class="row">
 			<div class="col-sm-3">
-				<div class="widget-box">
-					<div class="widget-header header-color-blue2">
+				<div class="widget-box widget-color-blue2">
+					<div class="widget-header ">
 						<h4 class="lighter smaller">学校组织</h4>
 					</div>
 					<div class="widget-body">
 						<div class="widget-main padding-8" style="height: 500px">
 							<!-- <div id="tree1" class="tree"></div> -->
-							<ul id="menuTree" class="ztree" style="height:480px;overflow: auto;"></ul>
+							<ul id="menuTree" class="tree" style="height:480px;overflow: auto;"></ul>
 						</div>
 					</div>
 				</div>
@@ -75,8 +77,8 @@
 					</div>
 					</div>
 				</div>
-				<div class="widget-box">
-					<div class="widget-header header-color-blue">
+				<div class="widget-box widget-color-blue">
+					<div class="widget-header ">
 						<h5 class="bigger lighter"><i class="icon-table"></i>信息</h5>
 						<div class="widget-toolbar no-border">
 						</div>
@@ -103,7 +105,7 @@
 <script type="text/javascript">
 var treeObj,delObj;
 jQuery(function($){
-	$.fn.zTree.init($("#menuTree"),{
+/* 	$.fn.zTree.init($("#menuTree"),{
 		async: {
 			enable: true,
 			//url:"org.htm?findTeacher",
@@ -115,6 +117,38 @@ jQuery(function($){
 		}
 	});
 	treeObj = $.fn.zTree.getZTreeObj("menuTree");
+*/
+	 $('#menuTree').ace_tree({
+    		dataSource: new DataSourceTree({url:'./role.htm?findTeacherRoleForACETree'}),//str.evalJSON()
+    		multiSelect:false,
+    		loadingHTML:'<div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>',
+    		'open-icon' : 'blue ace-icon fa fa-user',
+    		'close-icon' : 'blue ace-icon fa fa-group',
+    		'selectable' : true,
+    		'selected-icon' : null,
+    		'unselected-icon' : null
+    	});
+	
+$('#menuTree').on('selected', function (evt, data) {
+		if($.isEmpty(data))return;
+		 data = data.info[0];
+		if(data.type =="item"){//老师
+			$.hmqRefreshPage("teacherInfo","systemPage.htm?teacherInfoPage&tId="+data.id);
+			$("#teacherInfoMsg").hide();
+			$("#teacherInfo").show();
+		}
+});
+
+$('#menuTree').on('opened', function (evt, data) {
+	if($.isEmpty(data))return;
+	 data = data.info[0];
+	if(data.type =="item"){//老师
+		$.hmqRefreshPage("teacherInfo","systemPage.htm?teacherInfoPage&tId="+data.id);
+		$("#teacherInfoMsg").hide();
+		$("#teacherInfo").show();
+	}
+});
+	
 	var grid_selector = "#grid-table";
 	var pager_selector = "#grid-pager";
 	jQuery(grid_selector).jqGrid({
@@ -150,7 +184,7 @@ jQuery(function($){
 	jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,
 		{ 	//navbar options
 			caption:"",
-			buttonicon:"icon-plus-sign purple",
+			buttonicon:"ui-icon ace-icon fa fa-plus-circle purple",
 			position:"first",
 			title:"添加老师",
 			onClickButton:function(){
@@ -179,7 +213,7 @@ jQuery(function($){
 	)
 	jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,{ 
 			caption:"",
-			buttonicon:"icon-trash red",
+			buttonicon:"ui-icon ace-icon fa fa-trash-o red",
 			title:"删除教师",
 			onClickButton:function(){
 				var selectId=$(grid_selector).jqGrid('getGridParam','selrow');
@@ -276,4 +310,6 @@ function onMouseUp(event, treeId, treeNode) {
 		$("#teacherInfo").show();
 	}
 }
+
+
 </script>

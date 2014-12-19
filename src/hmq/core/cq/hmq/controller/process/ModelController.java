@@ -1,4 +1,4 @@
-package core.cq.hmq.controller.process;
+/*package core.cq.hmq.controller.process;
 
 import java.io.ByteArrayInputStream;
 import java.util.List;
@@ -29,11 +29,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-/**
+*//**
  * 流程模型控制器
  * 
  * @author henryyan
- */
+ *//*
 @Controller
 @RequestMapping(value = "/workflow/model")
 public class ModelController {
@@ -43,9 +43,9 @@ public class ModelController {
 	@Autowired
 	RepositoryService repositoryService;
 
-	/**
+	*//**
 	 * 模型列表
-	 */
+	 *//*
 	@RequestMapping(value = "list")
 	public ModelAndView modelList() {
 		ModelAndView mav = new ModelAndView("workflow/model-list");
@@ -54,9 +54,9 @@ public class ModelController {
 		return mav;
 	}
 
-	/**
+	*//**
 	 * 创建模型
-	 */
+	 *//*
 	@RequestMapping(value = "create", method = RequestMethod.POST)
 	public void create(@RequestParam("name") String name,
 			@RequestParam("key") String key,
@@ -94,9 +94,9 @@ public class ModelController {
 		}
 	}
 
-	/**
+	*//**
 	 * 根据Model部署流程
-	 */
+	 *//*
 	@RequestMapping(value = "deploy/{modelId}")
 	public String deploy(@PathVariable("modelId") String modelId,
 			RedirectAttributes redirectAttributes) {
@@ -121,9 +121,9 @@ public class ModelController {
 		return "redirect:/workflow/model/list";
 	}
 
-	/**
+	*//**
 	 * 导出model的xml文件
-	 */
+	 *//*
 	@RequestMapping(value = "export/{modelId}")
 	public void export(@PathVariable("modelId") String modelId,
 			HttpServletResponse response) {
@@ -155,3 +155,4 @@ public class ModelController {
 	}
 
 }
+*/

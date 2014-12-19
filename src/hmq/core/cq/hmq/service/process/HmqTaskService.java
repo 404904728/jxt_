@@ -1,4 +1,4 @@
-package core.cq.hmq.service.process;
+/*package core.cq.hmq.service.process;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,11 +43,11 @@ public class HmqTaskService extends BaseService {
 	@Resource
 	private RuntimeService runtimeService;
 
-	/**
+	*//**
 	 * 取自己待办的任务
 	 * 
 	 * @return
-	 */
+	 *//*
 	public List<TaskModal> queryTaskByUser() {
 		TaskQuery taskQuery = taskService.createTaskQuery();
 		List<Task> tasks = taskQuery.taskAssignee(currentUserId() + "").list();
@@ -63,11 +63,11 @@ public class HmqTaskService extends BaseService {
 		return taskModalList;
 	}
 
-	/**
+	*//**
 	 * 查找自己已办结的任务
 	 * 
 	 * @return
-	 */
+	 *//*
 	public List<TaskModal> queryTaskGoneByUser() {
 		List<HistoricTaskInstance> listHistoricTask = historyService
 				.createHistoricTaskInstanceQuery().taskAssignee(
@@ -84,13 +84,13 @@ public class HmqTaskService extends BaseService {
 		return taskModalList;
 	}
 
-	/**
+	*//**
 	 * 认领任务
 	 * 
 	 * @param taskId
 	 * @param userId
 	 * @return
-	 */
+	 *//*
 	public AjaxMsg taskAllot(String taskId, Long userId) {
 		AjaxMsg am = new AjaxMsg();
 		try {
@@ -105,13 +105,13 @@ public class HmqTaskService extends BaseService {
 		return am;
 	}
 
-	/**
+	*//**
 	 * 完成任务
 	 * 
 	 * @param taskId
 	 * @param userId
 	 * @return
-	 */
+	 *//*
 	public AjaxMsg taskComplete(String taskId) {
 		AjaxMsg am = new AjaxMsg();
 		try {
@@ -130,12 +130,12 @@ public class HmqTaskService extends BaseService {
 		return am;
 	}
 
-	/**
+	*//**
 	 * 取自己的待签收任务任务(通过当前用户角色ID来取)
 	 * 
 	 * @param group
 	 * @return
-	 */
+	 *//*
 	public List<TaskModal> querySignTaskByRole() {
 		List<Long> roleIds = roleService.currentRoleByUserId(currentUserId());// 查询出当前用户的角色
 		List<String> roleIdList = new ArrayList<String>();
@@ -157,11 +157,11 @@ public class HmqTaskService extends BaseService {
 		return taskModalList;
 	}
 
-	/**
+	*//**
 	 * 取自己的待签收任务任务(通过当前用户ID来取)
 	 * 
 	 * @return
-	 */
+	 *//*
 	public List<TaskModal> querySignTaskByUserId() {
 		TaskQuery taskQuery = taskService.createTaskQuery();
 		List<Task> taskGroup = taskQuery
@@ -179,3 +179,4 @@ public class HmqTaskService extends BaseService {
 	}
 
 }
+*/

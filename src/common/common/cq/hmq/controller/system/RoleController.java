@@ -59,6 +59,18 @@ public class RoleController extends BaseController {
 	public List<Map<String, Object>> findTeacherRole(String id) {
 		return roleService.findTeacherRoleZtree(id);
 	}
+	
+	/**
+	 * 查找老师
+	 * 
+	 * @param id
+	 * @return
+	 */
+	@RequestMapping(params = "findTeacherRoleForACETree", method = RequestMethod.POST)
+	@ResponseBody
+	public List<Map<String, Object>> findTeacherRoleForACETree(Long id) {
+		return roleService.findTeacherRoleForACETree(id);
+	}
 
 	/**
 	 * 查找老师角色

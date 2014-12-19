@@ -1,4 +1,4 @@
-package core.cq.hmq.controller.process;
+/*package core.cq.hmq.controller.process;
 
 import java.util.List;
 
@@ -39,9 +39,9 @@ public class ProcessInstanceController {
 		return mav;
 	}
 
-	/**
+	*//**
 	 * 挂起、激活流程实例
-	 */
+	 *//*
 	@RequestMapping(value = "update/{state}/{processInstanceId}")
 	public String updateState(@PathVariable("state") String state,
 			@PathVariable("processInstanceId") String processInstanceId,
@@ -58,3 +58,4 @@ public class ProcessInstanceController {
 		return "redirect:/workflow/processinstance/running";
 	}
 }
+*/

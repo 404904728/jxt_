@@ -1,4 +1,50 @@
-var DataSourceTree = function(options) {
+		 var DataSourceTree = function (options) {
+			this._data 	= options.data;
+			this._delay = options.delay;
+             this.url = options.url;
+         }
+
+         DataSourceTree.prototype.data = function (options, callback) {
+             var self = this;
+             var $data = null;
+
+             var param = null;
+             //current select row data 
+             //console.info(options);
+             if (!("name" in options) && !("type" in options)) {
+                 param = 0;//load the first level  
+             }
+             else if ("type" in options && options.type == "folder") {
+         		if("additionalParameters" in options && "children" in options.additionalParameters)
+        			$data = options.additionalParameters.children;
+        		else{
+        			$data = {}//no data
+        			param = options.id;
+        		}
+            	 
+             }
+
+             if (param != null) {
+                 $.ajax({
+                     url: this.url,
+                     data: 'id=' + param,
+                     type: 'POST',
+                     dataType: 'json',
+                     success: function (response) {
+                         if (response) 
+                             callback({ data: response});
+                     },
+                     error: function (response) {
+                     }
+                 });
+             }
+             
+         	if($data != null)//this setTimeout is only for mimicking some random delay
+        		setTimeout(function(){callback({ data: $data });} , parseInt(Math.random() * 500) + 200);
+             
+         };
+
+/*var DataSourceTree = function(options) {
 	this._data 	= options.data;
 	this._delay = options.delay;
 }
@@ -25,7 +71,7 @@ DataSourceTree.prototype.data = function(options, callback) {
 	//but you can retrieve your data dynamically from a server using ajax call
 	//checkout examples/treeview.html and examples/treeview.js for more info
 };
-
+*/
 var tree_data = {
 	'for-sale' : {name: 'For Sale', type: 'folder'}	,
 	'vehicles' : {name: 'Vehicles', type: 'folder'}	,

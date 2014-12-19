@@ -68,7 +68,7 @@
 	<![endif]-->
 	<script src="./res/ace/assets/js/bootstrap.min.js"></script>
 	<script src="./res/ace/assets/js/jquery-ui.min.js"></script>
-	<!-- page specific plugin scripts -->jquery-ui.min.js
+	<!-- page specific plugin scripts -->
 	<script src="./res/ace/assets/js/jquery-ui.custom.min.js"></script>
 	<script src="./res/ace/assets/js/jquery.ui.touch-punch.min.js"></script>
 	<script src="./res/ace/assets/js/bootbox.min.js"></script>

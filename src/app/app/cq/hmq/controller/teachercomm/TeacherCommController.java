@@ -37,10 +37,8 @@ public class TeacherCommController extends BaseController{
 	
 	@RequestMapping(params="findOrgTreeDataForAce")
 	@ResponseBody
-	public List<Map<String, Object>> findOrgTreeDataForAce(){
-		List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-		list.add(teacherCommService.obtailOrgDataForCommForAce());
-		return list;
+	public List<Map<String, Object>> findOrgTreeDataForAce(Long id){
+		return teacherCommService.obtailOrgDataForCommForAce(id);
 	}
 	
 	@RequestMapping(params="findTeacherGridDataForAce")

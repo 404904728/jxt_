@@ -1,4 +1,4 @@
-package core.cq.hmq.activiti;
+/*package core.cq.hmq.activiti;
 
 import org.activiti.editor.rest.application.ModelerServicesInit;
 import org.activiti.rest.api.DefaultResource;
@@ -7,20 +7,20 @@ import org.activiti.rest.filter.JsonpFilter;
 import org.restlet.Restlet;
 import org.restlet.routing.Router;
 
-/**
+*//**
  * 
  * @author hejian 2014-01-18
  * 注册了一些REST路由
- */
+ *//*
 public class ExplorerRestApplication extends ActivitiRestApplication {
 
 	public ExplorerRestApplication() {
 		super();
 	}
 
-	/**
+	*//**
 	 * Creates a root Restlet that will receive all incoming calls.
-	 */
+	 *//*
 	@Override
 	public synchronized Restlet createInboundRoot() {
 		Router router = new Router(getContext());
@@ -31,3 +31,4 @@ public class ExplorerRestApplication extends ActivitiRestApplication {
 		return jsonpFilter;
 	}
 }
+*/

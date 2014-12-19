@@ -1,4 +1,4 @@
-package core.cq.hmq.service.process;
+/*package core.cq.hmq.service.process;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -29,18 +29,18 @@ public class ProcessService extends BaseService {
 	@Resource
 	private RepositoryService repositoryService;
 
-	/** 读取BPMN，分解为任务以便前台展示流程进度图 */
+	*//** 读取BPMN，分解为任务以便前台展示流程进度图 *//*
 	@SuppressWarnings("static-access")
 	public List<FlowModal> processProgress(String xmlPath) {
 		return new XMLRead().read(xmlPath);
 	}
 
-	/**
+	*//**
 	 * 启动一个流程
 	 * 
 	 * @param proId
 	 *            流程ID <process id="流程ID" name="XXX" isExecutable="true">
-	 */
+	 *//*
 	public boolean processStart(String proId) {
 		boolean b = true;
 		try {
@@ -53,13 +53,13 @@ public class ProcessService extends BaseService {
 		return b;
 	}
 
-	/**
+	*//**
 	 * 查询部署的工作流
 	 * 
 	 * @param proId
 	 *            如果流程ID为空查询所有,
 	 * @return
-	 */
+	 *//*
 	public List<Map<String, String>> findProcessDefinition(String proId) {
 		ProcessDefinitionQuery processDefinitionQuery = null;
 		if (proId == null) {
@@ -86,9 +86,9 @@ public class ProcessService extends BaseService {
 		return list;
 	}
 
-	/**
+	*//**
 	 *发布工作流
-	 */
+	 *//*
 	public boolean deployProcess(String ProcessKey, String processName) {
 		try {
 			Deployment deployment = repositoryService.createDeployment()
@@ -103,29 +103,29 @@ public class ProcessService extends BaseService {
 		return true;
 	}
 
-	/**
+	*//**
 	 * 挂起一个流程
-	 */
+	 *//*
 	public void suspendProcess(String proId) {
 		repositoryService.suspendProcessDefinitionById(proId);
 	}
 
-	/**
+	*//**
 	 * 激活一个流程
 	 * 
 	 * @param key
-	 */
+	 *//*
 	public void activationProcess(String proId) {
 		repositoryService.activateProcessDefinitionById(proId);
 	}
 
-	/**
+	*//**
 	 * 获取流程图不是监控中的流程图
 	 * 
 	 * @param flowKey
 	 * @return
 	 * @throws IOException
-	 */
+	 *//*
 	public void processPng(String flowKey, HttpServletResponse response)
 			throws IOException {
 		ProcessDefinition processDefinition = repositoryService
@@ -208,3 +208,4 @@ public class ProcessService extends BaseService {
 	}
 
 }
+*/

@@ -1,4 +1,4 @@
-package core.cq.hmq.controller.process.leave;
+/*package core.cq.hmq.controller.process.leave;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,12 +27,12 @@ import core.cq.hmq.service.system.MenuService;
 import core.cq.hmq.util.tools.DateUtil;
 
 
-/**
+*//**
  * 请假流程
  * 
  * @author hejian
  * 
- */
+ *//*
 @Controller
 @RequestMapping("/leavePro")
 public class LeaveProController extends BaseController {
@@ -49,7 +49,7 @@ public class LeaveProController extends BaseController {
 	@Resource
 	private MenuService menuService;
 
-	/** 列表页面 */
+	*//** 列表页面 *//*
 	@RequestMapping(params = "viewTask_")
 	public ModelAndView viewTask(Long menuId) {
 		ModelAndView mav = new ModelAndView("core/process/proTaskList");
@@ -57,7 +57,7 @@ public class LeaveProController extends BaseController {
 		return mav;
 	}
 
-	/** 列表页面 */
+	*//** 列表页面 *//*
 	@RequestMapping(params = "leaveForm_")
 	public ModelAndView leaveForm(Long menuId) {
 		ModelAndView mav = new ModelAndView("core/process/leaveForm");
@@ -85,4 +85,4 @@ public class LeaveProController extends BaseController {
 //		return "申请成功,下一步任务人" + user.getName();
 //
 //	}
-}
+/*}*/

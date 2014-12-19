@@ -8,15 +8,8 @@
     var grid_selector = "#grid-table-tc";
 	var pager_selector = "#grid-pager";
 	$(function(){
-	    $.ajax({
-	        url: "./TeacherComm.htm?findOrgTreeDataForAce",
-	        cache: false,
-	        dataType: "json",
-	        type: "POST",
-	        contentType: "application/x-www-form-urlencoded;charset=utf-8",
-	        success: function(data) {
 	      	  $('#orgtreetc').ace_tree({
-	      		dataSource: new DataSourceTree({data: data}),//str.evalJSON()
+	      		dataSource: new DataSourceTree({url:'./TeacherComm.htm?findOrgTreeDataForAce'}),//str.evalJSON()
 	      		multiSelect:false,
 	      		loadingHTML:'<div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>',
 	      		'open-icon' : 'ace-icon tree-minus',
@@ -25,8 +18,6 @@
 	      		'selected-icon' : 'ace-icon fa fa-check',
 	      		'unselected-icon' : 'ace-icon fa fa-times'
 	      	});
-	       }
-	    });
 
 		$(grid_selector).jqGrid({
 			//direction: "rtl",

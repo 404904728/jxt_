@@ -7,7 +7,6 @@ import java.util.Map;
 
 import javax.annotation.Resource;
 
-import org.activiti.engine.impl.util.json.JSONObject;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import common.cq.hmq.pojo.sys.Org;
 import common.cq.hmq.service.OrgService;
-import core.cq.hmq.annotation.ControllerAnn;
+
 import core.cq.hmq.controller.core.DateBaseController;
 import core.cq.hmq.modal.AjaxMsg;
 import core.cq.hmq.util.tools.StringUtil;

@@ -1,4 +1,4 @@
-package core.cq.hmq.dao.impl;
+/*package core.cq.hmq.dao.impl;
 
 import java.util.List;
 
@@ -17,20 +17,20 @@ import core.cq.hmq.dao.Dao;
 import core.cq.hmq.util.tools.Encrypt;
 
 
-/**
+*//**
  * 重构activiti 的identity
  * 
  * @author Administrator
  * 
- */
+ *//*
 public class IdentityServiceImpl implements IdentityService {
 
 	@Resource
 	protected Dao dao;
 
-	/**
+	*//**
 	 * 检查密码是否为相等密码 Checks if the password is valid for the given
-	 */
+	 *//*
 	public boolean checkPassword(String userId, String password) {
 		// TODO Auto-generated method stub
 		User user = dao.findOne(User.class, "id", Long.parseLong(userId));
@@ -49,10 +49,10 @@ public class IdentityServiceImpl implements IdentityService {
 		return null;
 	}
 
-	/**
+	*//**
 	 * 创建一个成员身份 userId - the userId, cannot be null. groupId - the groupId,
 	 * cannot be null.
-	 */
+	 *//*
 	@Override
 	public void createMembership(String userId, String groupId) {
 		// TODO Auto-generated method stub
@@ -60,9 +60,9 @@ public class IdentityServiceImpl implements IdentityService {
 
 	}
 
-	/**
+	*//**
 	 * 返回一个native任务
-	 */
+	 *//*
 	@Override
 	public NativeGroupQuery createNativeGroupQuery() {
 		// TODO Auto-generated method stub
@@ -183,3 +183,4 @@ public class IdentityServiceImpl implements IdentityService {
 	}
 
 }
+*/

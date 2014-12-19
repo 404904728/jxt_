@@ -72,6 +72,6 @@
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
 	
-	<bean id="scoreService" class="common.cq.hmq.services.ScoreService"></bean>
+	<!-- <bean id="scoreService" class="common.cq.hmq.services.ScoreService"></bean> -->
 
 </beans>
