@@ -5,7 +5,7 @@
 	<h1>
 		个人资料
 		<small>
-			<i class="icon-double-angle-right"></i>
+			<i class="ace-icon glyphicon glyphicon-user"></i>
 			个人信息
 		</small>
 	</h1>
@@ -18,9 +18,9 @@
 		<div class="clearfix">
 			<div class="pull-left alert alert-success no-margin">
 				<button type="button" class="close" data-dismiss="alert">
-					<i class="icon-remove"></i>
+					<i class="ace-icon fa fa-times"></i>
 				</button>
-				<i class="icon-umbrella bigger-120 blue"></i>
+				<i class="ace-icon fa fa-umbrella bigger-140 blue"></i>
 				点击下面的图片，或在个人资料栏位进行编辑 ...
 			</div>
 		</div>

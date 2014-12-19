@@ -10,8 +10,6 @@
 <html>
 <head>
 <title>智慧家校通-登录</title>
-<%--<link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700" media="all" rel="stylesheet"--%>
-<%--type="text/css"/>--%>
 <link href="./res/7en/stylesheets/bootstrap.min.css" media="all"
 	rel="stylesheet" type="text/css" />
 <link href="./res/7en/stylesheets/font-awesome.css" media="all"
@@ -20,8 +18,14 @@
 	rel="stylesheet" type="text/css" />
 <link href="./res/7en/stylesheets/style.css" media="all"
 	rel="stylesheet" type="text/css" />
-<script src="./res/ace/assets/js/jquery-1.10.2.min.js"></script>
-<script src="./res/ace/assets/js/jquery-ui-1.10.3.full.min.js"></script>
+	<!--[if !IE]> -->
+	<script src="./res/ace/assets/js/jquery.2.1.1.min.js"></script>
+	<!-- <![endif]-->
+	
+	<!--[if IE]>
+	<script src="./res/ace/assets/js/jquery.1.11.1.min.js"></script>
+	<![endif]-->
+<!-- <script src="./res/ace/assets/js/jquery-ui-1.10.3.full.min.js"></script> -->
 <script src="./res/7en/javascripts/bootstrap.min.js"
 	type="text/javascript"></script>
 <script src="./res/7en/javascripts/raphael.min.js"

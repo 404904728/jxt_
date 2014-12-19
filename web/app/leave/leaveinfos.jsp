@@ -291,9 +291,9 @@
 									}
 									onehtml += '<input type="hidden" id="lid" value="'+leaveinfo.id+'">';
 									if(!leaveinfo.status){
-										onehtml += '<i class="message-star icon-star orange2"></i>';
+										onehtml += '<i class="message-star ace-icon fa fa-star orange2"></i>';
 									}else{
-										onehtml += '<i class="message-star icon-star icon-star-empty"></i>';
+										onehtml += '<i class="message-star ace-icon fa fa-star-o light-grey"></i>';
 									}
 									onehtml += '<span class="sender" title="'+leaveinfo.name+'">'+leaveinfo.name+'</span>';
 									onehtml += '<span class="time">'+leaveinfo.leaveType+'</span>';
@@ -533,7 +533,7 @@
 															<div>
 																<div class="messagebar-item-left">
 																	<a href="#" class="btn-back-message-list">
-																		<i class="icon-arrow-left blue bigger-110 middle"></i>
+																		<i class="fa fa-arrow-left blue bigger-110 middle"></i>
 																		<b class="bigger-110 middle">返回</b>
 																	</a>
 																</div>
@@ -602,11 +602,11 @@
 																<ul class="pagination middle">
 																	<li id="first" class="disabled" onclick="onclickfirst()">
 																		<a href="#" >
-																			<i class="icon-step-backward middle"></i></a>
+																			<i class="ace-icon fa fa-step-backward middle"></i></a>
 																	</li>
 																	<li id="last" class="disabled" onclick="onclicklast()">
 																		<a href="#" >
-																			<i class="icon-caret-left bigger-140 middle"></i></a>
+																			<i class="ace-icon fa fa-caret-left bigger-140 middle"></i></a>
 																	</li>
 																	<li>
 																		<span>
@@ -616,13 +616,13 @@
 
 																	<li id="next" onclick="onclicknext()">
 																		<a href="#" >
-																			<i class="icon-caret-right bigger-140 middle"></i>
+																			<i class="ace-icon fa fa-caret-right bigger-140 middle"></i>
 																		</a>
 																	</li>
 
 																	<li id="end" onclick="onclickend()">
 																		<a href="#">
-																			<i class="icon-step-forward middle"></i>
+																			<i class="ace-icon fa fa-step-forward middle"></i>
 																		</a>
 																	</li>
 																</ul>
@@ -667,7 +667,7 @@
 												<input type="hidden" name="receiverId" disabled="disabled"></input>
 												<input type="text" onclick="findBack()" name="receicerName"
 													id="form-field-recipient" value="" placeholder="请选择接收人" /> <i
-													class="icon-user"></i> </span>
+													class="ace-icon fa fa-user"></i> </span>
 												</div>
 											</div>
 									  </c:if>
@@ -681,12 +681,12 @@
 												<div class="input-icon block col-xs-5 no-padding" >
 													<input id="txtB" name="startDate" style="height: 90%" name="birthday" 
 													 type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',maxDate:'#F{$dp.$D(\'txtE\')}'})"> 
-													<i class="icon-time"></i>
+													<i class="ace-icon fa fa-clock-o"></i>
 												</div>
 												<div class="input-icon block col-xs-5 no-padding">
 													<input id="txtE" name="endDate"  style="height: 90%" name="birthday"
 													  type="text"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm',minDate:'#F{$dp.$D(\'txtB\')}'})">
-													<i class="icon-time"></i>
+													<i class="ace-icon fa fa-clock-o"></i>
 												</div>
 											</div>
 										</div>

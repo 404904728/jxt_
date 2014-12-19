@@ -46,7 +46,7 @@ jQuery.extend({
 					$("#"+options.div).addClass("hide");
 				$( this ).dialog( "destroy" ); 
 			},
-			title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='icon-ok'></i>"+options.title+"</h4></div>",
+			title: "<div class='widget-header widget-header-small'><h4 class='smaller'><i class='ace-icon fa fa-arrow-up'></i>"+options.title+"</h4></div>",
 			title_html: true,
 			buttons:buttons
 		});

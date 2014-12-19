@@ -10,7 +10,6 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.web.container"/>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/activiti-bpmn-converter-5.13.jar"/>
 	<classpathentry kind="lib" path="web/WEB-INF/lib/activiti-bpmn-model-5.13.jar"/>

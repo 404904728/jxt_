@@ -6,6 +6,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class LogRecord {
@@ -18,6 +20,8 @@ public class LogRecord {
 	private Integer type;// 操作类型
 	private String content;// 操作内容
 	private Long userId;// 操作人ID
+	
+	@Temporal(TemporalType.TIME)
 	private Date date;// 操作时间
 
 	@Id

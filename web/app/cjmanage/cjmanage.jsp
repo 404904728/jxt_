@@ -196,8 +196,8 @@ var njzr = 1;
 								</c:if>
 				</p>
 			</div>
-			<div id="studentscoregrid" class="widget-box">
-				<div class="widget-header widget-header-flat  header-color-green2">
+			<div id="studentscoregrid" class="widget-box widget-color-green2">
+				<div class="widget-header widget-header-flat">
 					<h4 class="smaller">导入成绩详情</h4>
 				</div>
 				<div class="widget-body" style="height: 460px">

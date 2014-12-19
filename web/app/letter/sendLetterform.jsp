@@ -176,8 +176,9 @@ $("#send-letter-form").validACE({
 						<span class="input-icon">
 						<input type="hidden" name="receiverId"></input>
 						<input type="text" onclick="findBack()" name="receicerName"
-							id="form-field-recipient" value="" placeholder="请选择接收人" /> <i
-							class="icon-user"></i> </span>
+							id="form-field-recipient" value="" placeholder="请选择接收人" /> 
+						<i class="ace-icon fa fa-user blue"></i>
+							 </span>
 					</div>
 				</div>
 			</div>

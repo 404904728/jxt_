@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<script src="./res/ace/assets/js/fuelux/data/fuelux.tree-sampledata.js"></script>
+<script src="./res/ace/assets/js/fuelux/data/fuelux.tree-sample-demo-data.js"></script>
 <script src="./res/ace/assets/js/fuelux/fuelux.tree.min.js"></script>
 <script type="text/javascript">
 	//String.prototype.evalJSON = function(){ return eval('(' + this + ')'); }
@@ -18,12 +18,12 @@
 	      	  $('#orgtreetc').ace_tree({
 	      		dataSource: new DataSourceTree({data: data}),//str.evalJSON()
 	      		multiSelect:false,
-	      		loadingHTML:'<div class="tree-loading"><i class="icon-refresh icon-spin blue"></i></div>',
-	      		'open-icon' : 'icon-minus',
-	      		'close-icon' : 'icon-plus',
+	      		loadingHTML:'<div class="tree-loading"><i class="ace-icon fa fa-refresh fa-spin blue"></i></div>',
+	      		'open-icon' : 'ace-icon tree-minus',
+	      		'close-icon' : 'ace-icon tree-plus',
 	      		'selectable' : true,
-	      		'selected-icon' : 'icon-ok',
-	      		'unselected-icon' : 'icon-remove'
+	      		'selected-icon' : 'ace-icon fa fa-check',
+	      		'unselected-icon' : 'ace-icon fa fa-times'
 	      	});
 	       }
 	    });
@@ -91,23 +91,6 @@
 		
 		});
 
-	function updatePagerIcons(table) {
-			var replacement = 
-			{
-				'ui-icon-seek-first' : 'icon-double-angle-left bigger-140',
-				'ui-icon-seek-prev' : 'icon-angle-left bigger-140',
-				'ui-icon-seek-next' : 'icon-angle-right bigger-140',
-				'ui-icon-seek-end' : 'icon-double-angle-right bigger-140'
-			};
-			$('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
-				var icon = $(this);
-				var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
-				
-				if($class in replacement) icon.attr('class', 'ui-icon '+replacement[$class]);
-			})
-		}
-
-
 		function onclicksearch(){
 			//var url = jQuery(grid_selector).jqGrid('getGridParam','url');
 			var url = gridurl;
@@ -130,8 +113,8 @@
 								<!-- PAGE CONTENT BEGINS -->
 								<div class="row">
 									<div class="col-sm-4">
-										<div class="widget-box">
-											<div class="widget-header widget-header-flat header-color-blue2">
+										<div class="widget-box widget-color-blue">
+											<div class="widget-header widget-header-flat ">
 												<h4 class="smaller">
 													<i class="icon-folder-open-alt smaller-80"></i>
 													机构组织列表

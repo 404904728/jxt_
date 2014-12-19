@@ -10,7 +10,7 @@
 						<div class="col-sm-9">
 							考勤标题：<span class="input-icon">
 								<input id="form-icon-1" type="text">
-								<i class="icon-leaf blue"></i>
+								<i class="ace-icon fa fa-leaf blue"></i>
 							</span>
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										 <button type="button" onclick="submitAddCheck()" class="btn btn-info btn-sm">确定
@@ -60,12 +60,11 @@ function initCheck(){
 			stuCount = root.length;
 			for(var i = 0; i < root.length; i++){
 				var data = root[i];
-				htmlVal += '<div class="pricing-span" onclick="changeColor(\'color'+ i +'\',\'hidden'+i+'\',\'colorflg'+ i +'\',\'status'+i+'\',\'stuId'+i+'\')" id="testId'+ i +'">' + 
-				'<div class="widget-box pricing-box-small">';
+				htmlVal += '<div class="pricing-span" onclick="changeColor(\'color'+ i +'\',\'hidden'+i+'\',\'colorflg'+ i +'\',\'status'+i+'\',\'stuId'+i+'\')" id="testId'+ i +'">';
 				if(i%2 == 1){
-					htmlVal += '<div class="widget-header header-color-blue4" id="color'+ i +'"><input type="hidden" id="hidden'+ i +'" value="'+ i +'"><input type="hidden" id="colorflg'+ i +'" value="1" ><input type="hidden" id="stuId'+ i +'" value="'+ data.id +'"><h5 class="bigger lighter"> </h5></div>';
+					htmlVal += '<div class="widget-box pricing-box-small widget-color-blue" id="color'+ i +'"> <div class="widget-header"><input type="hidden" id="hidden'+ i +'" value="'+ i +'"><input type="hidden" id="colorflg'+ i +'" value="1" ><input type="hidden" id="stuId'+ i +'" value="'+ data.id +'"><h5 class="bigger lighter"> </h5></div>';
 				}else if(i%2 == 0){
-					htmlVal += '<div class="widget-header header-color-blue5" id="color'+ i +'"><input type="hidden" id="hidden'+ i +'" value="'+ i +'"><input type="hidden" id="colorflg'+ i +'" value="1" ><input type="hidden" id="stuId'+ i +'" value="'+ data.id +'"><h5 class="bigger lighter"> </h5></div>';
+					htmlVal += '<div class="widget-box pricing-box-small widget-color-blue2" id="color'+ i +'"> <div class="widget-header" id="color'+ i +'"><input type="hidden" id="hidden'+ i +'" value="'+ i +'"><input type="hidden" id="colorflg'+ i +'" value="1" ><input type="hidden" id="stuId'+ i +'" value="'+ data.id +'"><h5 class="bigger lighter"> </h5></div>';
 				}
 				htmlVal += '<div class="widget-body">' + 
 				'<div class="widget-main no-padding">' +
@@ -92,7 +91,7 @@ function changeColor(id,hiid,flgid,status,stuid){
 /* 	alert($("#" + stuid).val()); */
 	if(flg == "1"){// == 1 是指被选中状态，即缺勤
 		$("#"+ id).removeClass($("#"+ id).attr("class"));
-		$("#"+ id).addClass('widget-header header-color-orange');
+		$("#"+ id).addClass('widget-box pricing-box-small widget-color-orange');
 		$("#" + status).text("未到");
 		$("#" + flgid).val("2");
 		stuIdArray += $("#" + stuid).val() + ",";
@@ -102,9 +101,9 @@ function changeColor(id,hiid,flgid,status,stuid){
 		$("#"+ id).removeClass($("#"+ id).attr("class"));
 		var i = $("#" + hiid).val();
 		if(i%2 == 0){
-			$("#"+ id).addClass('widget-header header-color-blue5');
+			$("#"+ id).addClass('widget-box pricing-box-small widget-color-blue');
 		}else if(i%2 == 1){
-			$("#"+ id).addClass('widget-header header-color-blue4');
+			$("#"+ id).addClass('widget-box pricing-box-small widget-color-blue2');
 		}
 		$("#" + status).html("&nbsp;");
 		$("#" + flgid).val("1");
@@ -133,7 +132,7 @@ function submitAddCheck(){
 	resubmit = true;
 	$.ajax({
 		type: "POST",
-		url: 'checkManage.htm?saveCheckInfos_&stuId=' + stuIdArray + '&title=' + encodeURI(encodeURI(title)) + '&stuCount=' + stuCount + '&unReachCount=' + unReachCount + '&classId=' + $("#c_select option:selected").val(),
+		url: 'checkManage.htm?saveCheckInfos_&stuId=' + stuIdArray + '&title=' + encodeURIComponent(title) + '&stuCount=' + stuCount + '&unReachCount=' + unReachCount + '&classId=' + $("#c_select option:selected").val(),
 		dataType: "json",
 		cache: false,
 		success: function(root){

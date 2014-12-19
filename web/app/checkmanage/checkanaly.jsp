@@ -157,9 +157,9 @@ function back(){
 							<div class="col-sm-7">
 								<span class="input-icon">
 								<input type="hidden" name="receiverId"></input>
-								<input type="text" onclick="findBack()" name="receicerName"
-									id="form-field-recipient" value="" placeholder="请选择学生" /> <i
-									class="icon-user"></i> </span>
+								<input class="form-control" type="text" onclick="findBack()" name="receicerName"
+									id="form-field-recipient" value="" placeholder="请选择学生"/> <i
+									class="ace-icon fa fa-user"></i> </span>
 							</div>
 						</div>
 						<div class="form-group">
@@ -168,29 +168,29 @@ function back(){
 								<div class="input-icon block col-xs-5 no-padding" >
 									<input id="txtB" name="startDate" style="height: 90%" name="birthday" 
 									 type="text" onClick="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'txtE\')}'})"> 
-									<i class="icon-time"></i>
+									<i class="ace-icon fa fa-clock-o"></i>
 								</div>
 								<div class="input-icon block col-xs-5 no-padding">
 									<input id="txtE" name="endDate"  style="height: 90%" name="birthday"
 									  type="text"  onClick="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'txtB\')}',maxDate:'#F{$dp.$D(\'txtB\',{M:2})}'})">
-									<i class="icon-time"></i>
+									<i class="ace-icon fa fa-clock-o"></i>
 								</div>
 							</div>
 						</div>
 						<div class="form-group">
 							<label class="col-sm-3 control-label no-padding-right"></label>
 							<div class="col-sm-7 ">
-								<span class="input-group-btn">
+								<div class="btn-group">
 								  <button type="button" class="btn btn-purple btn-sm" onclick="onclickanaly()">统计<i
-										class="icon-bar-chart icon-on-right bigger-110"></i></button>
+										class="ace-icon fa fa-bar-chart-o icon-on-right bigger-110"></i></button>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										 <button type="reset" class="btn btn-info btn-sm">重置<i
-										class="icon-wrench icon-on-right bigger-110"></i></button>
+										class="ace-icon fa fa-refresh icon-on-right bigger-110"></i></button>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 										 <button type="button" class="btn btn-sm" onclick="back()">返回<i
-										class="icon-reply icon-on-right bigger-110"></i></button>
+										class="ace-icon fa fa-share icon-on-right bigger-110"></i></button>
 										
-								</span>
+								</div>
 							</div>
 						</div>
 					</div>

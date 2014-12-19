@@ -51,7 +51,7 @@ public class TeacherInfoService extends BaseService {
 	public String getZuzhiByTeaId(Long tId) {
 		List list = dao
 				.getHelperDao()
-				.find("select wmsys.wm_concat(r.name_f) from userrole_t ur, "
+				.find("select group_concat(r.name_f) from userrole_t ur, "
 						+ "role_t r where ur.roleid_f = r.id_f and ur.teacher_f = 1 and ur.userid_f = ? and r.type_f = 1",
 						tId);
 		if (null != list && list.size() > 0) {

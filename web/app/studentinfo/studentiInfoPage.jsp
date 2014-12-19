@@ -10,17 +10,17 @@ function rollBackStuInfos(){
 </script>
 <div>
 	<div class="alert alert-success" style="margin-bottom: 5px">
-		<i class="icon-reply green"></i>
+		<i class="ace-icon fa fa-reply green"></i>
 		<button class="btn btn-link" onclick="rollBackStuInfos()">返回学生信息</button>
 	</div>
-	
-	<div class="widget-header header-color-blue">
-		<h5 class="bigger lighter">
-			<i class="icon-table">
-				信息
-			</i>
-		</h5>
-	</div>
+	<div class="widget-box widget-color-blue">
+		<div class="widget-header">
+			<h5 class="bigger lighter">
+				<i class="icon-table">
+					信息
+				</i>
+			</h5>
+		</div>
 	<div id="user-profile-1" style="margin-left: 30px; margin-top:100px; width: 1000px;" class="user-profile row">
 		<div class="col-xs-12 col-sm-3 center">
 			<div>
@@ -188,4 +188,5 @@ function rollBackStuInfos(){
 
 		</div>
 	</div>
+		</div>
 </div>

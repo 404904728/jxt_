@@ -41,8 +41,8 @@
 				<div id="home_message" style=" width:200px;margin-left: 5px;display: none;">
 				</div>
 			</div>
-			<div id="studentscoregrid" class="widget-box">
-				<div class="widget-header widget-header-small  header-color-green">
+			<div id="studentscoregrid" class="widget-box widget-color-green">
+				<div class="widget-header widget-header-small">
 					<h4 class="smaller">学生详情</h4>
 				</div>
 				<div class="widget-body" style="height: 498px">

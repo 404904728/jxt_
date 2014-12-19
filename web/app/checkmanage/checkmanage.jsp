@@ -81,7 +81,7 @@
 					jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,
 							{ 	//navbar options
 								caption:"",
-								buttonicon:"ui-icon icon-zoom-in grey",
+								buttonicon:"ui-icon ace-icon fa fa-plus-circle purple",
 								position:"first",
 								title:"新增考勤",
 								onClickButton:function(){
@@ -99,7 +99,7 @@
 					jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,
 							{ 	//navbar options
 								caption:"",
-								buttonicon:"ui-icon icon-bar-chart",
+								buttonicon:"ace-icon fa fa-bar-chart-o",
 								position:"second",
 								title:"统计",
 								onClickButton:function(){

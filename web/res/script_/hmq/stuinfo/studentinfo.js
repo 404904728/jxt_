@@ -7,11 +7,6 @@ $(document).ready(function(){
 	
 	var beginUrl = 'stuinfo.htm?query_1&status=1';
 	if('1' == userType_js){
-		/*$("#classMessage").css('display','none');
-		var stu_to_calss_1 = queryStuInfo_class('stuinfo.htm?StuClassinfo_');
-		$("#home_message").html('<i class="icon-hand-right"/> ' + stu_to_calss_1);
-		$("#home_message").css('display','block');*/
-		
 		$("#studentByClassMess").css('display','none');
 		$("#readStuMeaasge").css('display','block');
 		$.hmqRefreshPage("readStuMeaasge","stuinfo.htm?queryOneStuInfos_&stuId=" + idValue);
@@ -28,11 +23,6 @@ $(document).ready(function(){
 	jQuery(grid_selector).jqGrid({
 		url:beginUrl,
 		datatype: "json",
-//		autoencode:true,
-//		loadonce:false,
-		//     {"A卷成绩":95.0,"B卷成绩":38.0,"年排":60.0,"年排涨幅":196.0"}
-//		data: grid_data,
-//		datatype: "local",
 		height: 400,
 		colNames:['操作', '学籍号', '姓名', '性别','家长姓名','生日', '职务', '身份证号','联系方式','','相册'],
 		colModel:[
@@ -93,15 +83,13 @@ $(document).ready(function(){
 			jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,
 				{ 	//navbar options
 					caption:"",
-					buttonicon:"ui-icon icon-pencil blue",
+					buttonicon:"ace-icon fa fa-pencil blue",
 					position:"first",
 					title:"信息修改",
 					onClickButton:function(){
 						if(null == idValue || "" == idValue){
 							alert("请选择修改的行!");
 						}else{
-							
-							
 							$.dialogACE({
 								title:'信息修改',
 								url:'stuinfo.htm?queryStuToUpdate_&stuId=' + idValue,
@@ -156,7 +144,6 @@ $(document).ready(function(){
 //							},"信息修改","stuId=" + idValue);
 //							
 							
-							
 						}
 					}
 				}
@@ -165,7 +152,7 @@ $(document).ready(function(){
 		jQuery(grid_selector).jqGrid('navButtonAdd',pager_selector,
 				{ 	//navbar options
 					caption:"",
-					buttonicon:"ui-icon icon-zoom-in grey",
+					buttonicon:"ace-icon fa fa-search-plus grey",
 					position:"first",
 					title:"信息查看",
 					onClickButton:function(){

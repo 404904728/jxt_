@@ -2,8 +2,8 @@
     pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 		
-<div>
-	<div class="widget-header header-color-blue">
+<div class="widget-box widget-color-blue">
+	<div class="widget-header">
 		<h5 class="bigger lighter">
 			<i class="icon-table">
 				

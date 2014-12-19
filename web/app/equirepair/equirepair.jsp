@@ -78,7 +78,7 @@
 																onkeydown="onclicksearch(this)" type="text"
 																autocomplete="off" class="input-small nav-search-input"
 																placeholder="请输入后回车 ..." /> <i
-																class="icon-search nav-search-icon"></i>
+																class="ace-icon fa fa-search nav-search-icon"></i>
 															</span>
 														</form>
 													</div>

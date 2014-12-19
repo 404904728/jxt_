@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <div class="row">
 		<div class="alert alert-success" style="margin-bottom: 5px">
-			<i class="icon-reply green"></i>
+			<i class="ace-icon fa fa-reply green"></i>
 			<button class="btn btn-link" onclick="rollBackCheck()">返回考勤信息</button>
 		</div>
 		<div class="col-xs-12">
@@ -12,7 +12,7 @@
 		<div class="widget-box">
 							<div class="widget-header">
 								<h4 class="smaller">
-									<i class="icon-comments smaller-80"></i>
+									<i class="ace-icon fa fa-comments smaller-80"></i>
 									${checkCount.title}
 								</h4>
 									${checkCount.stitle}
@@ -23,22 +23,23 @@
 				<c:if test="${checkCount.flg == 0 || checkCount.flg == '0'}">
 					<c:forEach items="${checkCount.content}" var="con" varStatus="status">
 						<div class="pricing-span" id="testId">
-							<div class="widget-box pricing-box-small">
 								<c:choose>
 									<c:when test="${con.flgId == 1 || con.flgId == '1'}">
 										<c:if test="${status.index%2 == 0}">
-											<div class="widget-header header-color-blue5">
+											<div class="widget-box pricing-box-small widget-color-blue2">
+											<div class="widget-header"></div>
 										</c:if>
 										<c:if test="${status.index%2 != 0}">
-											<div class="widget-header header-color-blue4">
+											<div class="widget-box pricing-box-small widget-color-blue">
+											<div class="widget-header "></div>
 										</c:if>
 									</c:when>
 									<c:otherwise>
-										<div class="widget-header header-color-orange">
+										<div class="widget-box pricing-box-small widget-color-orange">
+										<div class="widget-header"></div>
 									</c:otherwise>
 								</c:choose>
 										<!--<h5 class="bigger lighter">${con.flgValue}</h5>-->
-							</div>
 							<div class="widget-body">
 								<div class="widget-main no-padding">
 									<ul class="list-unstyled list-striped pricing-table">
